@@ -39,11 +39,13 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsertMany = new System.Windows.Forms.Button();
             this.btnDropDB = new System.Windows.Forms.Button();
+            this.txtIP = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnQuery
             // 
-            this.btnQuery.Location = new System.Drawing.Point(49, 113);
+            this.btnQuery.Location = new System.Drawing.Point(38, 160);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(141, 54);
             this.btnQuery.TabIndex = 0;
@@ -53,7 +55,7 @@
             // 
             // btnInsertOne
             // 
-            this.btnInsertOne.Location = new System.Drawing.Point(49, 195);
+            this.btnInsertOne.Location = new System.Drawing.Point(38, 242);
             this.btnInsertOne.Name = "btnInsertOne";
             this.btnInsertOne.Size = new System.Drawing.Size(141, 54);
             this.btnInsertOne.TabIndex = 1;
@@ -63,7 +65,7 @@
             // 
             // btnStatus
             // 
-            this.btnStatus.Location = new System.Drawing.Point(49, 30);
+            this.btnStatus.Location = new System.Drawing.Point(38, 77);
             this.btnStatus.Name = "btnStatus";
             this.btnStatus.Size = new System.Drawing.Size(141, 54);
             this.btnStatus.TabIndex = 2;
@@ -73,7 +75,7 @@
             // 
             // btnListDB
             // 
-            this.btnListDB.Location = new System.Drawing.Point(282, 30);
+            this.btnListDB.Location = new System.Drawing.Point(271, 77);
             this.btnListDB.Name = "btnListDB";
             this.btnListDB.Size = new System.Drawing.Size(141, 54);
             this.btnListDB.TabIndex = 3;
@@ -83,7 +85,7 @@
             // 
             // btnQueryAll
             // 
-            this.btnQueryAll.Location = new System.Drawing.Point(282, 113);
+            this.btnQueryAll.Location = new System.Drawing.Point(271, 160);
             this.btnQueryAll.Name = "btnQueryAll";
             this.btnQueryAll.Size = new System.Drawing.Size(141, 54);
             this.btnQueryAll.TabIndex = 4;
@@ -93,7 +95,7 @@
             // 
             // btnSkipLimit
             // 
-            this.btnSkipLimit.Location = new System.Drawing.Point(282, 280);
+            this.btnSkipLimit.Location = new System.Drawing.Point(271, 327);
             this.btnSkipLimit.Name = "btnSkipLimit";
             this.btnSkipLimit.Size = new System.Drawing.Size(141, 54);
             this.btnSkipLimit.TabIndex = 5;
@@ -103,7 +105,7 @@
             // 
             // btnProjections
             // 
-            this.btnProjections.Location = new System.Drawing.Point(49, 280);
+            this.btnProjections.Location = new System.Drawing.Point(38, 327);
             this.btnProjections.Name = "btnProjections";
             this.btnProjections.Size = new System.Drawing.Size(141, 54);
             this.btnProjections.TabIndex = 6;
@@ -113,7 +115,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(49, 360);
+            this.btnDelete.Location = new System.Drawing.Point(38, 407);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(141, 54);
             this.btnDelete.TabIndex = 7;
@@ -123,7 +125,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(49, 432);
+            this.btnUpdate.Location = new System.Drawing.Point(38, 479);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(141, 54);
             this.btnUpdate.TabIndex = 8;
@@ -133,7 +135,7 @@
             // 
             // btnInsertMany
             // 
-            this.btnInsertMany.Location = new System.Drawing.Point(282, 195);
+            this.btnInsertMany.Location = new System.Drawing.Point(271, 242);
             this.btnInsertMany.Name = "btnInsertMany";
             this.btnInsertMany.Size = new System.Drawing.Size(141, 54);
             this.btnInsertMany.TabIndex = 9;
@@ -143,7 +145,7 @@
             // 
             // btnDropDB
             // 
-            this.btnDropDB.Location = new System.Drawing.Point(282, 360);
+            this.btnDropDB.Location = new System.Drawing.Point(271, 407);
             this.btnDropDB.Name = "btnDropDB";
             this.btnDropDB.Size = new System.Drawing.Size(141, 54);
             this.btnDropDB.TabIndex = 10;
@@ -151,11 +153,31 @@
             this.btnDropDB.UseVisualStyleBackColor = true;
             this.btnDropDB.Click += new System.EventHandler(this.btnDropDB_Click);
             // 
+            // txtIP
+            // 
+            this.txtIP.Location = new System.Drawing.Point(129, 26);
+            this.txtIP.Name = "txtIP";
+            this.txtIP.Size = new System.Drawing.Size(283, 25);
+            this.txtIP.TabIndex = 11;
+            this.txtIP.Text = "10.2.21.39";
+            this.txtIP.TextChanged += new System.EventHandler(this.txtIP_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "IP Addess:";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 498);
+            this.ClientSize = new System.Drawing.Size(469, 550);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtIP);
             this.Controls.Add(this.btnDropDB);
             this.Controls.Add(this.btnInsertMany);
             this.Controls.Add(this.btnUpdate);
@@ -170,6 +192,7 @@
             this.Name = "FormMain";
             this.Text = "CSharpMongoDB Test";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -186,6 +209,8 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnInsertMany;
         private System.Windows.Forms.Button btnDropDB;
+        private System.Windows.Forms.TextBox txtIP;
+        private System.Windows.Forms.Label label1;
     }
 }
 

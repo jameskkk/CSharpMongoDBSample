@@ -18,8 +18,8 @@ namespace CSharpMongoDBTest
     /// </summary>
     public partial class FormMain : Form
     {
-        //private string m_IPAddress = "10.2.21.39";
-        private string m_IPAddress = "127.0.0.1";
+        private string m_IPAddress = "10.2.21.39";
+        //private string m_IPAddress = "127.0.0.1";
 
         public FormMain()
         {
@@ -284,6 +284,14 @@ namespace CSharpMongoDBTest
             cars.UpdateOne(filter, update);
 
             Console.WriteLine("Update end!");
+        }
+
+        private void txtIP_TextChanged(object sender, EventArgs e)
+        {
+            if (txtIP.Text != "")
+            {
+                m_IPAddress = txtIP.Text;
+            }
         }
     }
 }
