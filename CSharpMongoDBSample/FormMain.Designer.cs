@@ -159,7 +159,7 @@
             this.txtIP.Name = "txtIP";
             this.txtIP.Size = new System.Drawing.Size(283, 25);
             this.txtIP.TabIndex = 11;
-            this.txtIP.Text = "10.2.21.39";
+            this.txtIP.Text = "127.0.0.1";
             this.txtIP.TextChanged += new System.EventHandler(this.txtIP_TextChanged);
             // 
             // label1
@@ -191,6 +191,7 @@
             this.Controls.Add(this.btnQuery);
             this.Name = "FormMain";
             this.Text = "CSharpMongoDB Test";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

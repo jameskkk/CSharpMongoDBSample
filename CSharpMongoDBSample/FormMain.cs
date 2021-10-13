@@ -18,18 +18,24 @@ namespace CSharpMongoDBTest
     /// </summary>
     public partial class FormMain : Form
     {
-        private string m_IPAddress = "10.2.21.39";
+        private string m_IPAddress = "10.10.142.21";
         //private string m_IPAddress = "127.0.0.1";
+        private string m_UserNamePassword = "root:123456@";
 
         public FormMain()
         {
             InitializeComponent();
         }
 
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            m_IPAddress = txtIP.Text;
+        }
+
         private void btnQuery_Click(object sender, EventArgs e)
         {
             // 預設連線(localhost: 27017)
-            string url = "mongodb://" + m_IPAddress + ":27017";
+            string url = "mongodb://" + m_UserNamePassword + m_IPAddress + ":27017";
             Console.WriteLine("url = " + url);
             var dbClient = new MongoClient(url);
 
@@ -51,7 +57,7 @@ namespace CSharpMongoDBTest
         private void btnQueryAll_Click(object sender, EventArgs e)
         {
             // 預設連線(localhost: 27017)
-            string url = "mongodb://" + m_IPAddress + ":27017";
+            string url = "mongodb://" + m_UserNamePassword + m_IPAddress + ":27017";
             Console.WriteLine("url = " + url);
             var dbClient = new MongoClient(url);
             IMongoDatabase db = dbClient.GetDatabase("testdb");
@@ -70,7 +76,7 @@ namespace CSharpMongoDBTest
         private void btnInsert_Click(object sender, EventArgs e)
         {
             // 預設連線(localhost: 27017)
-            string url = "mongodb://" + m_IPAddress + ":27017";
+            string url = "mongodb://" + m_UserNamePassword + m_IPAddress + ":27017";
             Console.WriteLine("url = " + url);
             var dbClient = new MongoClient(url);
 
@@ -99,7 +105,7 @@ namespace CSharpMongoDBTest
         private void btnInsertMany_Click(object sender, EventArgs e)
         {
             // 預設連線(localhost: 27017)
-            string url = "mongodb://" + m_IPAddress + ":27017";
+            string url = "mongodb://" + m_UserNamePassword + m_IPAddress + ":27017";
             Console.WriteLine("url = " + url);
             var dbClient = new MongoClient(url);
 
@@ -165,7 +171,7 @@ namespace CSharpMongoDBTest
         private void btnStatus_Click(object sender, EventArgs e)
         {
             // 預設連線(localhost: 27017)
-            string url = "mongodb://" + m_IPAddress + ":27017";
+            string url = "mongodb://" + m_UserNamePassword + m_IPAddress + ":27017";
             Console.WriteLine("url = " + url);
             var dbClient = new MongoClient(url);
 
@@ -180,7 +186,7 @@ namespace CSharpMongoDBTest
         private void btnListDB_Click(object sender, EventArgs e)
         {
             // 預設連線(localhost: 27017)
-            string url = "mongodb://" + m_IPAddress + ":27017";
+            string url = "mongodb://" + m_UserNamePassword + m_IPAddress + ":27017";
             Console.WriteLine("url = " + url);
             var dbClient = new MongoClient(url);
             var dbList = dbClient.ListDatabases().ToList();
@@ -198,7 +204,7 @@ namespace CSharpMongoDBTest
         private void btnSkipLimit_Click(object sender, EventArgs e)
         {
             // 預設連線(localhost: 27017)
-            string url = "mongodb://" + m_IPAddress + ":27017";
+            string url = "mongodb://" + m_UserNamePassword + m_IPAddress + ":27017";
             Console.WriteLine("url = " + url);
             var dbClient = new MongoClient(url);
 
@@ -217,7 +223,7 @@ namespace CSharpMongoDBTest
         private void btnProjections_Click(object sender, EventArgs e)
         {
             // 預設連線(localhost: 27017)
-            string url = "mongodb://" + m_IPAddress + ":27017";
+            string url = "mongodb://" + m_UserNamePassword + m_IPAddress + ":27017";
             Console.WriteLine("url = " + url);
             var dbClient = new MongoClient(url);
 
@@ -237,7 +243,7 @@ namespace CSharpMongoDBTest
         private void btnDelete_Click(object sender, EventArgs e)
         {
             // 預設連線(localhost: 27017)
-            string url = "mongodb://" + m_IPAddress + ":27017";
+            string url = "mongodb://" + m_UserNamePassword + m_IPAddress + ":27017";
             Console.WriteLine("url = " + url);
             var dbClient = new MongoClient(url);
 
@@ -254,7 +260,7 @@ namespace CSharpMongoDBTest
         private void btnDropDB_Click(object sender, EventArgs e)
         {
             // 預設連線(localhost: 27017)
-            string url = "mongodb://" + m_IPAddress + ":27017";
+            string url = "mongodb://" + m_UserNamePassword + m_IPAddress + ":27017";
             Console.WriteLine("url = " + url);
             var dbClient = new MongoClient(url);
 
@@ -270,7 +276,7 @@ namespace CSharpMongoDBTest
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             // 預設連線(localhost: 27017)
-            string url = "mongodb://" + m_IPAddress + ":27017";
+            string url = "mongodb://" + m_UserNamePassword + m_IPAddress + ":27017";
             Console.WriteLine("url = " + url);
             var dbClient = new MongoClient(url);
 
